@@ -1,7 +1,7 @@
 # Roses-RPG
 Proxis Official configuration packs. (SkillAPI) - RosesCore and SkillMMO.
 
-Documentatin Roses Core:
+Documentation Roses Core:
 
   Basic lores:
     General
