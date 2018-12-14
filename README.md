@@ -23,7 +23,7 @@ Documentatin Roses Core:
       - Level Requirement: [Any Positive INT]
 
   Classes Included:
-    Clock - Core (Main Config Manager, DO NOT edit unless you know what you are doing.)
+  - Clock - Core (Main Config Manager, DO NOT edit unless you know what you are doing.)
     
     Citizen (Basic Class)
       - Archer
