@@ -1,6 +1,10 @@
 # Roses-RPG
 Proxis Official configuration packs. (SkillAPI) - RosesCore and SkillMMO.
 
+
+**https://discord.gg/5qx6Thb** Official Discord from Proxis! Join us for support and to play on the original server.
+
+
 Documentation Roses Core:
 
   Basic lores:
