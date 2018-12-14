@@ -1,0 +1,51 @@
+Strider: 
+  name: 'Strider'
+  action-bar: ''
+  prefix: '&3Strider'
+  group: 'class'
+  mana: '&2Mana'
+  max-level: 20
+  parent: 'Citizen'
+  needs-permission: 'true'
+  attributes: 
+    health-base: '140'
+    health-scale: '0'
+    mana-base: '0'
+    mana-scale: '0'
+    str-base: '0'
+    str-scale: '0'
+    dex-base: '0'
+    dex-scale: '0'
+    int-base: '0'
+    int-scale: '0'
+    vit-base: '0'
+    vit-scale: '0'
+    wis-base: '0'
+    wis-scale: '0'
+    cha-base: '0'
+    cha-scale: '0'
+  mana-regen: 0.0
+  tree: 'REQUIREMENT'
+  blacklist: 
+  - 'LEGACY_SHIELD'
+  - 'LEGACY_BOW'
+  skills: 
+  - 'STR - Draft'
+  - 'STR - Whirlwind'
+  - 'STR - Quicken'
+  - 'STR - Fast Recovery'
+  - 'STR - Launch'
+  - 'STR - Getaway'
+  - 'STR - Dodge'
+  - 'STR - Sap'
+  icon: 'DIAMOND_SWORD'
+  icon-durability: 0
+  icon-data: 0
+  icon-lore: 
+  - '&b&l&nStrider'
+  - '&f&m---------------&f[ &3Information &f]&f&m---------------'
+  - '&fThe strider, a fragile yet swift warrior of the wind. '
+  - '&fUsing his cunning and dexterous skills to avoid danger, '
+  - '&fand attack with quick thrusts of his sword.'
+  - '&f&m---------------------------------------------'
+  exp-source: 273

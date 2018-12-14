@@ -1,0 +1,194 @@
+GLA - Bluster: 
+  name: 'GLA - Bluster'
+  type: 'Gladiator - Utility'
+  max-level: 1
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    level-base: '5'
+    level-scale: '0'
+    cost-base: '1'
+    cost-scale: '0'
+    cooldown-base: '15'
+    cooldown-scale: '0'
+    mana-base: '0'
+    mana-scale: '0'
+    points-spent-req-base: '0'
+    points-spent-req-scale: '0'
+    incompatible: 
+    - 'GLA - Taunt'
+  msg: '&6{player} &2has cast &6{skill}&r'
+  icon: 'FURNACE'
+  icon-durability: 0
+  icon-data: 2
+  icon-lore: 
+  - '&3&l{name}'
+  - '&f- &bRank: &7({level}/{max})'
+  - '&f&m---------------&f[ &3Description &f]&f&m---------------'
+  - '&f- Buff yourself for first, then debuff yourself.'
+  - '&f&m---------------&f[ &3Information &f]&f&m---------------'
+  - '&f- &3Level Required: &f5'
+  - '&f- &3Points Required: &f1'
+  - '&f&m---------------------------------------------'
+  desc:  []
+  components: 
+    Skill Damage-i: 
+      type: 'trigger'
+      indicator: '3D'
+      data: 
+        icon-key: ''
+        mana: 'False'
+        cooldown: 'False'
+        target: 'True'
+        dmg-min: '0'
+        dmg-max: '9999'
+        category: 
+        - 'MELEE'
+        indicator: '2D'
+      children: 
+        Self-j: 
+          type: 'target'
+          indicator: '3D'
+          data: 
+            icon-key: ''
+            indicator: '2D'
+            group: 'enemy'
+            wall: 'false'
+            caster: 'false'
+          children: 
+            Flag-k: 
+              type: 'condition'
+              indicator: '3D'
+              data: 
+                icon-key: ''
+                type: 'Set'
+                key: 'GLADIATOR_BLUSTER_BUFF'
+                indicator: '2D'
+              children: 
+                Buff-l: 
+                  type: 'mechanic'
+                  indicator: '3D'
+                  data: 
+                    icon-key: ''
+                    counts: 'True'
+                    immediate: 'True'
+                    modifier: 'Multiplier'
+                    value-base: '2'
+                    value-scale: '0'
+                    indicator: '2D'
+                  children:  {}
+            Flag-m: 
+              type: 'condition'
+              indicator: '3D'
+              data: 
+                icon-key: ''
+                type: 'Set'
+                key: 'GLADIATOR_BLUSTER_DEBUFF'
+                indicator: '2D'
+              children: 
+                Buff-n: 
+                  type: 'mechanic'
+                  indicator: '3D'
+                  data: 
+                    icon-key: ''
+                    counts: 'True'
+                    immediate: 'True'
+                    modifier: 'Multiplier'
+                    value-base: '0.5'
+                    value-scale: '0'
+                    indicator: '2D'
+                  children:  {}
+    Cast: 
+      type: 'trigger'
+      indicator: '3D'
+      data: 
+        icon-key: ''
+        indicator: '2D'
+      children: 
+        Self-b: 
+          type: 'target'
+          indicator: '3D'
+          data: 
+            icon-key: ''
+            indicator: '2D'
+            group: 'enemy'
+            wall: 'false'
+            caster: 'false'
+          children: 
+            Sound-c: 
+              type: 'mechanic'
+              indicator: '3D'
+              data: 
+                icon-key: ''
+                counts: 'True'
+                sound: 'Entity Villager Hurt'
+                volume-base: '100'
+                volume-scale: '0'
+                pitch-base: '1'
+                pitch-scale: '0'
+                indicator: '2D'
+              children:  {}
+            Particle-d: 
+              type: 'mechanic'
+              indicator: '3D'
+              data: 
+                icon-key: ''
+                counts: 'True'
+                particle: 'Angry Villager'
+                arrangement: 'Sphere'
+                radius-base: '2'
+                radius-scale: '0'
+                particles-base: '30'
+                particles-scale: '0'
+                visible-radius: '25'
+                dx: '0'
+                dy: '0'
+                dz: '0'
+                speed: '1'
+                amount: '1'
+                forward: '0'
+                upward: '0'
+                right: '0'
+                indicator: '2D'
+              children:  {}
+            Flag-e: 
+              type: 'mechanic'
+              indicator: '3D'
+              data: 
+                icon-key: ''
+                counts: 'True'
+                key: 'GLADIATOR_BLUSTER_BUFF'
+                seconds-base: '5'
+                seconds-scale: '0'
+                indicator: '2D'
+              children:  {}
+            Delay-f: 
+              type: 'mechanic'
+              indicator: '3D'
+              data: 
+                icon-key: ''
+                counts: 'True'
+                delay-base: '6'
+                delay-scale: '0'
+                indicator: '2D'
+              children: 
+                Flag-g: 
+                  type: 'condition'
+                  indicator: '3D'
+                  data: 
+                    icon-key: ''
+                    type: 'Not Set'
+                    key: 'GLADIATOR_BLUSTER_BUFF'
+                    indicator: '2D'
+                  children: 
+                    Flag-h: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        key: 'GLADIATOR_BLUSTER_DEBUFF'
+                        seconds-base: '5'
+                        seconds-scale: '0'
+                        indicator: '2D'
+                      children:  {}

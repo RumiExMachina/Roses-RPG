@@ -1,0 +1,159 @@
+ATTRIBUTES: 
+  rows: 1
+  pages: 1
+  slots: 
+    1: 
+      str: 0
+      vit: 3
+      wis: 4
+      melee defense: 7
+      dex: 1
+      cha: 5
+      int: 2
+stDragoon: 
+  rows: 3
+  pages: 1
+  slots: 
+    1: 
+      dgn - pounce: 2
+      dgn - catch: 0
+      dgn - fling: 8
+      dgn - shove: 6
+      dgn - double jump: 4
+stGladiator: 
+  rows: 5
+  pages: 1
+  slots: 
+    1: 
+      gla - taunt: 18
+      gla - demoralize: 37
+      gla - bluster: 19
+      gla - counter: 0
+      gla - humiliate: 9
+      gla - grapple: 1
+      gla - bait: 36
+      gla - showoff: 10
+      gla - victory lap: 27
+      gla - tackle: 28
+stBurglar: 
+  rows: 3
+  pages: 1
+  slots: 
+    1: 
+      bur - fight dirty: 6
+      bur - pickpocket: 4
+      bur - naturewalk: 26
+      bur - backstab: 0
+      bur - snipe: 2
+      bur - stealth: 8
+      bur - shadowstep: 17
+stStrider: 
+  rows: 3
+  pages: 1
+  slots: 
+    1: 
+      str - launch: 4
+      str - whirlwind: 11
+      str - sap: 8
+      str - draft: 2
+      str - fast recovery: 9
+      str - getaway: 13
+      str - dodge: 6
+      str - quicken: 0
+stMinstrel: 
+  rows: 3
+  pages: 1
+  slots: 
+    1: 
+      min - crescendo: 8
+      min - cards of fate: 0
+      min - song of stillness: 4
+      min - song of sickness: 2
+      min - song of sorrow: 6
+stBarbarian: 
+  rows: 3
+  pages: 1
+  slots: 
+    1: 
+      bbn - sweeping blows: 9
+      bbn - hysterical: 2
+      bbn - shriek: 6
+      bbn - rage: 0
+      bbn - unstoppable: 8
+      bbn - suppress: 15
+      bbn - unhexable: 17
+      bbn - cleave: 4
+      bbn - untouchable: 26
+CLASS_DETAILS: 
+  rows: 3
+  pages: 1
+  slots: 
+    1: 
+      core: 10
+      class: 16
+csCitizen: 
+  rows: 4
+  pages: 1
+  slots: 
+    1: 
+      barbarian: 10
+      swordsage: 11
+      burglar: 19
+      dragoon: 21
+      minstrel: 12
+      archer: 20
+      gladiator: 22
+      strider: 13
+stHysterix: 
+  rows: 5
+  pages: 1
+  slots: 
+    1: 
+      hys - rage: 18
+      hys - unstoppable: 36
+      hys - shriek: 27
+      hys - hysterical: 9
+      hys - cleave: 0
+stSwordsage: 
+  rows: 3
+  pages: 1
+  slots: 
+    1: 
+      sws - sword of returning: 0
+      sws - magic weapon: 20
+      sws - dancing blades: 2
+      sws - heal: 15
+      sws - javelin: 9
+      sws - arcane attraction: 8
+      sws - bladestorm: 11
+      sws - accelerate: 4
+      sws - cure: 6
+CLASS_SELECTION: 
+  rows: 3
+  pages: 1
+  slots: 
+    1: 
+      citizen: 16
+      clock - core: 10
+stArcher: 
+  rows: 3
+  pages: 1
+  slots: 
+    1: 
+      arc - backflip: 8
+      arc - flare: 6
+      arc - arrowstorm: 4
+      arc - multishot: 13
+      arc - sidestep: 17
+      arc - bring the rain: 20
+      arc - burstshot: 22
+      arc - carpet bomb: 11
+      arc - strafe: 2
+      arc - net: 9
+      arc - blunted: 0
+stClock - Core: 
+  rows: 1
+  pages: 1
+  slots: 
+    1: 
+      core combat power: 0

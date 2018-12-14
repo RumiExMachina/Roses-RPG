@@ -1,0 +1,191 @@
+SWS - Accelerate: 
+  name: 'SWS - Accelerate'
+  type: 'Swordsage - Buff'
+  max-level: 1
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    level-base: '1'
+    level-scale: '0'
+    cost-base: '1'
+    cost-scale: '0'
+    cooldown-base: '7'
+    cooldown-scale: '0'
+    mana-base: '30'
+    mana-scale: '0'
+    points-spent-req-base: '0'
+    points-spent-req-scale: '0'
+    incompatible: 
+    - 'SWS - Boost'
+  msg: '&6{player} &2has cast &6{skill}&r'
+  icon: 'LEATHER_BOOTS'
+  icon-durability: 0
+  icon-data: 0
+  icon-lore: 
+  - '&3&l{name}'
+  - '&f- &bRank: &7({level}/{max})'
+  - '&f&m---------------&f[ &3Description &f]&f&m---------------'
+  - '&f- Move speed boost + Attack damage boost to 150% for 3s.'
+  - '&f&m---------------&f[ &3Information &f]&f&m---------------'
+  - '&f- &3Level Required: &f1'
+  - '&f- &3Points Required: &f1'
+  - '&f&m---------------------------------------------'
+  desc:  []
+  components: 
+    Skill Damage-k: 
+      type: 'trigger'
+      indicator: '3D'
+      data: 
+        icon-key: ''
+        mana: 'False'
+        cooldown: 'False'
+        target: 'True'
+        dmg-min: '0'
+        dmg-max: '9999'
+        category: 
+        - 'MELEE'
+        indicator: '2D'
+      children: 
+        Self-l: 
+          type: 'target'
+          indicator: '3D'
+          data: 
+            icon-key: ''
+            indicator: '2D'
+            group: 'enemy'
+            wall: 'false'
+            caster: 'false'
+          children: 
+            Flag-m: 
+              type: 'condition'
+              indicator: '3D'
+              data: 
+                icon-key: ''
+                type: 'Set'
+                key: 'SPEEDUP_SDS'
+                indicator: '2D'
+              children: 
+                Buff-n: 
+                  type: 'mechanic'
+                  indicator: '3D'
+                  data: 
+                    icon-key: ''
+                    counts: 'True'
+                    immediate: 'True'
+                    modifier: 'Multiplier'
+                    value-base: '1.5'
+                    value-scale: '0'
+                    indicator: '2D'
+                  children:  {}
+    Cast: 
+      type: 'trigger'
+      indicator: '3D'
+      data: 
+        icon-key: ''
+        indicator: '2D'
+      children: 
+        Self-b: 
+          type: 'target'
+          indicator: '3D'
+          data: 
+            icon-key: ''
+            indicator: '2D'
+            group: 'enemy'
+            wall: 'false'
+            caster: 'false'
+          children: 
+            Flag-c: 
+              type: 'mechanic'
+              indicator: '3D'
+              data: 
+                icon-key: ''
+                counts: 'True'
+                key: 'SPEEDUP_SDS'
+                seconds-base: '4'
+                seconds-scale: '0'
+                indicator: '2D'
+              children:  {}
+            Sound-d: 
+              type: 'mechanic'
+              indicator: '3D'
+              data: 
+                icon-key: ''
+                counts: 'True'
+                sound: 'Entity Blaze Death'
+                volume-base: '100'
+                volume-scale: '0'
+                pitch-base: '1'
+                pitch-scale: '0'
+                indicator: '2D'
+              children:  {}
+            Particle-e: 
+              type: 'mechanic'
+              indicator: '3D'
+              data: 
+                icon-key: ''
+                counts: 'True'
+                particle: 'Flame'
+                arrangement: 'Sphere'
+                radius-base: '4'
+                radius-scale: '0'
+                particles-base: '20'
+                particles-scale: '0'
+                visible-radius: '25'
+                dx: '0'
+                dy: '0'
+                dz: '0'
+                speed: '1'
+                amount: '1'
+                forward: '0'
+                upward: '0'
+                right: '0'
+                indicator: '2D'
+              children:  {}
+    Initialize: 
+      type: 'trigger'
+      indicator: '3D'
+      data: 
+        icon-key: ''
+        indicator: '2D'
+      children: 
+        Passive-g: 
+          type: 'mechanic'
+          indicator: '3D'
+          data: 
+            icon-key: ''
+            counts: 'True'
+            seconds-base: '0'
+            seconds-scale: '0'
+            indicator: '2D'
+          children: 
+            Self-h: 
+              type: 'target'
+              indicator: '3D'
+              data: 
+                icon-key: ''
+                indicator: '2D'
+                group: 'enemy'
+                wall: 'false'
+                caster: 'false'
+              children: 
+                Flag-i: 
+                  type: 'condition'
+                  indicator: '3D'
+                  data: 
+                    icon-key: ''
+                    type: 'Set'
+                    key: 'SPEEDUP_SDS'
+                    indicator: '2D'
+                  children: 
+                    Speed-j: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        multiplier-base: '2'
+                        multiplier-scale: '0'
+                        duration-base: '3'
+                        duration-scale: '0'
+                        indicator: '2D'
+                      children:  {}

@@ -1,0 +1,288 @@
+STR - Draft: 
+  name: 'STR - Draft'
+  type: 'Strider - Passive'
+  max-level: 1
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    level-base: '1'
+    level-scale: '0'
+    cost-base: '1'
+    cost-scale: '0'
+    cooldown-base: '0'
+    cooldown-scale: '0'
+    mana-base: '0'
+    mana-scale: '0'
+    points-spent-req-base: '0'
+    points-spent-req-scale: '0'
+    incompatible: 
+    - 'STR - Whirlwind'
+  msg: '&6{player} &2has cast &6{skill}&r'
+  icon: 'LEATHER_BOOTS'
+  icon-durability: 0
+  icon-data: 0
+  icon-lore: 
+  - '&3&l{name}'
+  - '&f- &bRank: &7({level}/{max})'
+  - '&f&m---------------&f[ &3Description &f]&f&m---------------'
+  - '&f- Toggleable Passive, AOE 3 damage behind the player every second. '
+  - '&fAlso deals 4 damage players in an AOE every second.'
+  - '&f&m---------------&f[ &3Information &f]&f&m---------------'
+  - '&f- &3Level Required: &f1'
+  - '&f- &3Points Required: &f1'
+  - '&f&m---------------------------------------------'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      indicator: '3D'
+      data: 
+        icon-key: ''
+        indicator: '2D'
+      children: 
+        Self-b: 
+          type: 'target'
+          indicator: '3D'
+          data: 
+            icon-key: ''
+            indicator: '2D'
+            group: 'enemy'
+            wall: 'false'
+            caster: 'false'
+          children: 
+            Flag Toggle-c: 
+              type: 'mechanic'
+              indicator: '3D'
+              data: 
+                icon-key: ''
+                counts: 'True'
+                key: 'STRIDER_DRAFT'
+                indicator: '2D'
+              children:  {}
+            Sound-d: 
+              type: 'mechanic'
+              indicator: '3D'
+              data: 
+                icon-key: ''
+                counts: 'True'
+                sound: 'Entity Ender Dragon Flap'
+                volume-base: '100'
+                volume-scale: '0'
+                pitch-base: '1'
+                pitch-scale: '0'
+                indicator: '2D'
+              children:  {}
+            Flag-e: 
+              type: 'condition'
+              indicator: '3D'
+              data: 
+                icon-key: ''
+                type: 'Set'
+                key: 'STRIDER_DRAFT'
+                indicator: '2D'
+              children: 
+                Message-f: 
+                  type: 'mechanic'
+                  indicator: '3D'
+                  data: 
+                    icon-key: ''
+                    counts: 'True'
+                    message: '&f[&3Draft&f] &3ON!'
+                    indicator: '2D'
+                  children:  {}
+            Else-g: 
+              type: 'condition'
+              indicator: '3D'
+              data: 
+                icon-key: ''
+                indicator: '2D'
+              children: 
+                Message-h: 
+                  type: 'mechanic'
+                  indicator: '3D'
+                  data: 
+                    icon-key: ''
+                    counts: 'True'
+                    message: '&f[&3Draft&f] &3OFF!'
+                    indicator: '2D'
+                  children:  {}
+    Initialize: 
+      type: 'trigger'
+      indicator: '3D'
+      data: 
+        icon-key: ''
+        indicator: '2D'
+      children: 
+        Passive-j: 
+          type: 'mechanic'
+          indicator: '3D'
+          data: 
+            icon-key: ''
+            counts: 'True'
+            seconds-base: '1'
+            seconds-scale: '0'
+            indicator: '2D'
+          children: 
+            Self-k: 
+              type: 'target'
+              indicator: '3D'
+              data: 
+                icon-key: ''
+                indicator: '2D'
+                group: 'enemy'
+                wall: 'false'
+                caster: 'false'
+              children: 
+                Flag-l: 
+                  type: 'condition'
+                  indicator: '3D'
+                  data: 
+                    icon-key: ''
+                    type: 'Set'
+                    key: 'STRIDER_DRAFT'
+                    indicator: '2D'
+                  children: 
+                    Direction-m: 
+                      type: 'condition'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        type: 'Caster'
+                        direction: 'Away'
+                        indicator: '2D'
+                      children: 
+                        Area-n: 
+                          type: 'target'
+                          indicator: '3D'
+                          data: 
+                            icon-key: ''
+                            radius-base: '5'
+                            radius-scale: '0'
+                            group: 'Enemy'
+                            wall: 'False'
+                            caster: 'False'
+                            max-base: '5'
+                            max-scale: '0'
+                            random: 'False'
+                            indicator: '2D'
+                          children: 
+                            Damage-o: 
+                              type: 'mechanic'
+                              indicator: '3D'
+                              data: 
+                                icon-key: ''
+                                counts: 'True'
+                                type: 'Damage'
+                                value-base: '3'
+                                value-scale: '0'
+                                true: 'False'
+                                classifier: 'MAGIC'
+                                indicator: '2D'
+                              children:  {}
+                            Sound-p: 
+                              type: 'mechanic'
+                              indicator: '3D'
+                              data: 
+                                icon-key: ''
+                                counts: 'True'
+                                sound: 'Block Glass Break'
+                                volume-base: '100'
+                                volume-scale: '0'
+                                pitch-base: '1'
+                                pitch-scale: '0'
+                                indicator: '2D'
+                              children:  {}
+                            Particle-q: 
+                              type: 'mechanic'
+                              indicator: '3D'
+                              data: 
+                                icon-key: ''
+                                counts: 'True'
+                                particle: 'Enchantment Table'
+                                arrangement: 'Sphere'
+                                radius-base: '2'
+                                radius-scale: '0'
+                                particles-base: '10'
+                                particles-scale: '0'
+                                visible-radius: '25'
+                                dx: '0'
+                                dy: '0'
+                                dz: '0'
+                                speed: '1'
+                                amount: '1'
+                                forward: '0'
+                                upward: '0'
+                                right: '0'
+                                indicator: '2D'
+                              children:  {}
+                    Else-r: 
+                      type: 'condition'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        indicator: '2D'
+                      children: 
+                        Area-s: 
+                          type: 'target'
+                          indicator: '3D'
+                          data: 
+                            icon-key: ''
+                            radius-base: '5'
+                            radius-scale: '0'
+                            group: 'Enemy'
+                            wall: 'False'
+                            caster: 'False'
+                            max-base: '5'
+                            max-scale: '0'
+                            random: 'False'
+                            indicator: '2D'
+                          children: 
+                            Damage-t: 
+                              type: 'mechanic'
+                              indicator: '3D'
+                              data: 
+                                icon-key: ''
+                                counts: 'True'
+                                type: 'Damage'
+                                value-base: '4'
+                                value-scale: '0'
+                                true: 'False'
+                                classifier: 'MAGIC'
+                                indicator: '2D'
+                              children:  {}
+                            Sound-u: 
+                              type: 'mechanic'
+                              indicator: '3D'
+                              data: 
+                                icon-key: ''
+                                counts: 'True'
+                                sound: 'Block Glass Break'
+                                volume-base: '100'
+                                volume-scale: '0'
+                                pitch-base: '1'
+                                pitch-scale: '0'
+                                indicator: '2D'
+                              children:  {}
+                            Particle-v: 
+                              type: 'mechanic'
+                              indicator: '3D'
+                              data: 
+                                icon-key: ''
+                                counts: 'True'
+                                particle: 'Enchantment Table'
+                                arrangement: 'Sphere'
+                                radius-base: '2'
+                                radius-scale: '0'
+                                particles-base: '10'
+                                particles-scale: '0'
+                                visible-radius: '25'
+                                dx: '0'
+                                dy: '0'
+                                dz: '0'
+                                speed: '1'
+                                amount: '1'
+                                forward: '0'
+                                upward: '0'
+                                right: '0'
+                                indicator: '2D'
+                              children:  {}

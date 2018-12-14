@@ -1,0 +1,196 @@
+DGN - Pounce: 
+  name: 'DGN - Pounce'
+  type: 'Dragoon - Offensive'
+  max-level: 1
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    level-base: '1'
+    level-scale: '0'
+    cost-base: '1'
+    cost-scale: '0'
+    cooldown-base: '12'
+    cooldown-scale: '0'
+    mana-base: '0'
+    mana-scale: '0'
+    points-spent-req-base: '0'
+    points-spent-req-scale: '0'
+    incompatible: 
+    - ''
+  msg: '&6{player} &2has cast &6{skill}&r'
+  icon: 'IRON_BOOTS'
+  icon-durability: 0
+  icon-data: 0
+  icon-lore: 
+  - '&3&l{name}'
+  - '&f- &bRank: &7({level}/{max})'
+  - '&f&m---------------&f[ &3Description &f]&f&m---------------'
+  - '&f- Jump. AOE  35 physical damage 4 radius when'
+  - '&fyou land. 70 damage if opponent has '
+  - '&fshove flag. 12s cooldown.'
+  - '&f&m---------------&f[ &3Information &f]&f&m---------------'
+  - '&f- &3Level Required: &f1'
+  - '&f- &3Points Required: &f1'
+  - '&f&m---------------------------------------------'
+  desc:  []
+  components: 
+    Land-f: 
+      type: 'trigger'
+      indicator: '3D'
+      data: 
+        icon-key: ''
+        mana: 'False'
+        cooldown: 'False'
+        min-distance: '2'
+        indicator: '2D'
+      children: 
+        Self-g: 
+          type: 'target'
+          indicator: '3D'
+          data: 
+            icon-key: ''
+            indicator: '2D'
+            group: 'enemy'
+            wall: 'false'
+            caster: 'false'
+          children: 
+            Flag-h: 
+              type: 'condition'
+              indicator: '3D'
+              data: 
+                icon-key: ''
+                type: 'Set'
+                key: 'POUNCE'
+                indicator: '2D'
+              children: 
+                Area-i: 
+                  type: 'target'
+                  indicator: '3D'
+                  data: 
+                    icon-key: ''
+                    radius-base: '4'
+                    radius-scale: '0'
+                    group: 'Enemy'
+                    wall: 'False'
+                    caster: 'False'
+                    max-base: '10'
+                    max-scale: '0'
+                    random: 'False'
+                    indicator: '2D'
+                  children: 
+                    Flag-j: 
+                      type: 'condition'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        type: 'Set'
+                        key: 'SHOVE_TARGET'
+                        indicator: '2D'
+                      children: 
+                        Damage-k: 
+                          type: 'mechanic'
+                          indicator: '3D'
+                          data: 
+                            icon-key: ''
+                            counts: 'True'
+                            type: 'Damage'
+                            value-base: '70'
+                            value-scale: '0'
+                            true: 'False'
+                            classifier: 'MELEE'
+                            indicator: '2D'
+                          children:  {}
+                        Flag Clear-l: 
+                          type: 'mechanic'
+                          indicator: '3D'
+                          data: 
+                            icon-key: ''
+                            counts: 'True'
+                            key: 'SHOVE_TARGET'
+                            indicator: '2D'
+                          children:  {}
+                    Else-m: 
+                      type: 'condition'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        indicator: '2D'
+                      children: 
+                        Damage-n: 
+                          type: 'mechanic'
+                          indicator: '3D'
+                          data: 
+                            icon-key: ''
+                            counts: 'True'
+                            type: 'Damage'
+                            value-base: '35'
+                            value-scale: '0'
+                            true: 'False'
+                            classifier: 'MELEE'
+                            indicator: '2D'
+                          children:  {}
+                Flag Clear-o: 
+                  type: 'mechanic'
+                  indicator: '3D'
+                  data: 
+                    icon-key: ''
+                    counts: 'True'
+                    key: 'POUNCE'
+                    indicator: '2D'
+                  children:  {}
+    Cast: 
+      type: 'trigger'
+      indicator: '3D'
+      data: 
+        icon-key: ''
+        indicator: '2D'
+      children: 
+        Self-b: 
+          type: 'target'
+          indicator: '3D'
+          data: 
+            icon-key: ''
+            indicator: '2D'
+            group: 'enemy'
+            wall: 'false'
+            caster: 'false'
+          children: 
+            Launch-c: 
+              type: 'mechanic'
+              indicator: '3D'
+              data: 
+                icon-key: ''
+                counts: 'True'
+                relative: 'Target'
+                forward-base: '0'
+                forward-scale: '0'
+                upward-base: '1.5'
+                upward-scale: '0'
+                right-base: '0'
+                right-scale: '0'
+                indicator: '2D'
+              children:  {}
+            Flag-d: 
+              type: 'mechanic'
+              indicator: '3D'
+              data: 
+                icon-key: ''
+                counts: 'True'
+                key: 'POUNCE'
+                seconds-base: '5'
+                seconds-scale: '0'
+                indicator: '2D'
+              children:  {}
+            Immunity-e: 
+              type: 'mechanic'
+              indicator: '3D'
+              data: 
+                icon-key: ''
+                counts: 'True'
+                type: 'Fall'
+                seconds-base: '5'
+                seconds-scale: '0'
+                multiplier-base: '0'
+                multiplier-scale: '0'
+                indicator: '2D'
+              children:  {}

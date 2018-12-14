@@ -1,0 +1,236 @@
+# Attributes.yml
+
+# For full details, visit
+# http://dev.bukkit.org/bukkit-plugins/skillapi/pages/attributes/
+
+# List of available stats to modify:
+#   health           - the max health of the player
+#   mana             - the amount of mana the player has
+#   mana-regen       - how much mana the player regenerates over time
+#   physical-damage  - damage dealt without using skills
+#   physical-defense - damage taken from non-skill attacks
+#   skill-damage     - damage dealt with skills
+#   skill-defense    - damage taken from skills
+#   move-speed       - movement speed of the player
+
+##########################################################
+#                                                        #
+#    Louis BloodRose - A Realm Reborn Attributes 1.0     #                                   
+#                                                        #
+##########################################################
+
+####################################################################################################################
+STR: 
+  display: '&2Strength'
+  max: '500'
+  icon: 'diamond_pickaxe'
+  icon-data: '7'
+  icon-lore: 
+  - '&2Strength &f(&2{amount}&f)'
+  - '&2&m------------------------'
+  - '&2Description:'
+  - '&f- [&2+0.01%&f] STR Based Melee / Ranged DMG.'
+  - '&f- [&2+0.01%&f] STR Based Skill DMG.'
+  - '&f- [&2+0.01%&f] STR Based Lore DMG.' 
+  - '&2&m------------------------'
+  global: 
+    condition:  {}
+    mechanic:
+      damage-value: 'v(a*0.0001+1):icon-key=STR_DMG'
+      damage lore-multiplier: 'v(a*0.0001+1):icon-key=STR_WEAP_BUFF'
+      buff-value: 'v(a*0.0001+1):icon-key=STR_BUFF_DMG'
+    target:  {}
+  stats:  {}
+####################################################################################################################
+DEX: 
+  display: '&2Dexterity'
+  max: '500'
+  icon: 'diamond_pickaxe'
+  icon-data: '12'
+  icon-lore: 
+  - '&2Dexterity &f(&2{amount}&f)'
+  - '&2&m------------------------'
+  - '&2Description:'
+  - '&f- [&2+0.04%&f] DEX Based Melee / Ranged DMG.'
+  - '&f- [&2+0.01%&f] DEX Based Skill DMG.'
+  - '&f- [&2+0.01%&f] DEX Based Lore DMG.' 
+  - '&f- [&2+0.01%&f] DEX Speed Effect (&2Time + Modifier&f).'
+  - '&f- [&2+0.2%&f] DEX Based Critical Effects.'  
+  - '&2&m------------------------'
+  global: 
+    condition:  {}
+    mechanic:
+      damage-value: 'v(a*0.00004+1):icon-key=DEX_DMG'
+      speed-duration: 'v(a*0.0001+1):icon-key=DEX_SPD_TIME'
+      speed-multiplier: 'v(a*0.0001+1):icon-key=DEX_SPD_BUFF'
+      chance-chance: 'v(a*0.002+1):icon-key=DEX_CRIT_CHANCE'
+      damage lore-multiplier: 'v(a*0.0001+1):icon-key=DEX_WEAP_BUFF'
+      buff-value: 'v(a*0.0001+1):icon-key=DEX_BUFF_DMG'
+    target:  {}
+  stats:  {}
+####################################################################################################################
+INT: 
+  display: '&2Intelligence'
+  max: '500'
+  icon: 'diamond_pickaxe'
+  icon-data: '16'
+  icon-lore: 
+  - '&2Intelligence &f(&2{amount}&f)'
+  - '&2&m------------------------'
+  - '&2Description:'
+  - '&f- [&2+0.01%&f] INT Based Melee / Ranged DMG.'
+  - '&f- [&2+0.01%&f] INT Based Skill DMG.'
+  - '&f- [&2+0.01%&f] INT Based Lore DMG.' 
+  - '&2&m------------------------'
+  global: 
+    condition:  {}
+    mechanic:
+      damage-value: 'v(a*0.0001+1):icon-key=INT_DMG'
+      heal-value: 'v(a*0.0001+1):icon-key=INT_HEAL'
+      damage lore-multiplier: 'v(a*0.0001+1):icon-key=INT_WEAP_BUFF'
+      buff-value: 'v(a*0.0001+1):icon-key=INT_BUFF_DMG'
+    target:  {}
+####################################################################################################################
+VIT: 
+  display: '&2Vitality'
+  max: '500'
+  icon: 'diamond_pickaxe'
+  icon-data: '5'
+  icon-lore: 
+  - '&2Vitality &f(&2{amount}&f)'
+  - '&2&m------------------------'
+  - '&2Description:'
+  - '&f- [&2+0.05%&f] VIT Based Heal.'
+  - '&f- [&2+0.19%&f] VIT Based DEF.' 
+  - '&2&m------------------------'
+  global: 
+    condition:  {}
+    mechanic:
+      heal-value: 'v(a*0.0005+1):icon-key=VIT_HEAL'
+      buff-value: 'a*(-0.0019)+1*v:icon-key=VIT_BUFF_DEF'
+    target:  {}
+  stats: 
+    health: 'a*8+v'
+####################################################################################################################
+WIS: 
+  display: '&2Wisdom'
+  max: '500'
+  icon: 'diamond_pickaxe'
+  icon-data: '2'
+  icon-lore: 
+  - '&2Wisdom &f(&2{amount}&f)'
+  - '&2&m------------------------'
+  - '&2Description:'
+  - '&f- [&2+0.05%&f] WIS Based Melee / Ranged DMG.'
+  - '&f- [&2+0.05%&f] WIS Based Skill DMG.'
+  - '&f- [&2+0.05%&f] WIS Based Heal.'
+  - '&f- [&2+0.05%&f] WIS Based Mana Heal.'
+  - '&f- [&2+0.10%&f] WIS Based DEF.'
+  - '&2&m------------------------'
+  global: 
+    condition:  {}
+    mechanic:
+      damage-value: 'v(a*0.0005+1):icon-key=WIS_DMG'
+      heal-value: 'v(a*0.0005+1):icon-key=WIS_HEAL'
+      mana-value: 'v(a*0.0005+1):icon-key=WIS_MANA'
+      buff-value: 'v(a*0.0005+1):icon-key=WIS_BUFF_DMG'
+      buff-value: 'a*(-0.001)+1*v:icon-key=WIS_BUFF_DEF'
+    target:  {}
+  stats: 
+    mana: 'a*8+v'
+    mana-regen: 'v(a*0.0005+1)'
+####################################################################################################################
+CHA: 
+  display: '&2Charisma'
+  max: '500'
+  icon: 'diamond_pickaxe'
+  icon-data: '14'
+  icon-lore: 
+  - '&2Charisma &f(&2{amount}&f)'
+  - '&2&m------------------------'
+  - '&2Description:'
+  - '&f- [&2+0.01%&f] CHA Based Melee / Ranged DMG.'
+  - '&f- [&2+0.01%&f] CHA Based Skill DMG.'
+  - '&f- [&2+0.05%&f] CHA Based Heal.'
+  - '&f- [&2+0.05%&f] CHA Based Mana Heal.'
+  - '&f- [&2+0.01%&f] CHA Based Potion Duration.'
+  - '&2&m------------------------'
+  global: 
+    condition:  {}
+    mechanic:
+      damage-value: 'v(a*0.0001+1):icon-key=CHA_DMG'
+      heal-value: 'v(a*0.0005+1):icon-key=CHA_HEAL'
+      mana-value: 'v(a*0.0005+1):icon-key=CHA_MANA'
+      potion-seconds: 'v(a*0.0001+1):icon-key=CHA_POT_TIME'
+      buff-value: 'v(a*0.0001+1)*v:icon-key=CHA_BUFF_DMG'
+      target:  {}
+  stats:  {}
+####################################################################################################################
+Melee Defense: 
+  display: '&2Melee Defense'
+  max: '100'
+  icon: 'iron_block'
+  icon-data: '0'
+  icon-lore: 
+  - '&2Melee Defense &f(&2{amount}&f)'
+  - '&2&m------------------------'
+  - '&2Description:'
+  - '&f- [&2+1%&f] Melee Defense.'
+  - '&2&m------------------------'
+  global: 
+    condition:  {}
+    mechanic:
+      buff-value: 'a*(-0.01)+1*v:icon-key=MELEE_DEF'
+    target:  {}
+  stats:  {}
+Ranged Defense: 
+  display: '&2Ranged Defense'
+  max: '100'
+  icon: 'iron_block'
+  icon-data: '0'
+  icon-lore: 
+  - '&2Ranged Defense &f(&2{amount}&f)'
+  - '&2&m------------------------'
+  - '&2Description:'
+  - '&f- [&2+1%&f] Ranged Defense.'
+  - '&2&m------------------------'
+  global: 
+    condition:  {}
+    mechanic:
+      buff-value: 'a*(-0.01)+1*v:icon-key=RANGED_DEF'
+    target:  {}
+  stats:  {}
+Magic Defense: 
+  display: '&2Magic Defense'
+  max: '100'
+  icon: 'iron_block'
+  icon-data: '0'
+  icon-lore: 
+  - '&2Magic Defense &f(&2{amount}&f)'
+  - '&2&m------------------------'
+  - '&2Description:'
+  - '&f- [&2+1%&f] Magic Defense.'
+  - '&2&m------------------------'
+  global: 
+    condition:  {}
+    mechanic:
+      buff-value: 'a*(-0.01)+1*v:icon-key=MAGIC_DEF'
+    target:  {}
+  stats:  {}
+PvE Defense: 
+  display: '&2PvE Defense'
+  max: '100'
+  icon: 'iron_block'
+  icon-data: '0'
+  icon-lore: 
+  - '&2PvE Defense &f(&2{amount}&f)'
+  - '&2&m------------------------'
+  - '&2Description:'
+  - '&f- [&2+1%&f] PvE Defense.'
+  - '&2&m------------------------'
+  global: 
+    condition:  {}
+    mechanic:
+      buff-value: 'a*(-0.01)+1*v:icon-key=PVE_DEF'
+    target:  {}
+  stats:  {}

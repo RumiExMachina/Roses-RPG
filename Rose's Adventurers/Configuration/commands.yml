@@ -1,0 +1,292 @@
+class: 
+  name: 'class'
+  sender: 'ANYONE'
+  enabled: 'true'
+  cooldown: 0
+bind: 
+  name: 'bind'
+  description: 'Binds a skill'
+  permission: 'skillapi.basic'
+  args: '<skill>'
+  sender: 'PLAYER_ONLY'
+  enabled: 'true'
+  cooldown: 0
+  messages: 
+    skill-bound: '&6{skill} &2has been bound to &6{item}'
+    not-skill: '&4You do not have that skill'
+cast: 
+  name: 'cast'
+  description: 'Casts a skill'
+  permission: 'skillapi.basic'
+  args: '<skill>'
+  sender: 'PLAYER_ONLY'
+  enabled: 'true'
+  cooldown: 0
+changeclass: 
+  name: 'changeclass'
+  description: 'Swaps classes'
+  permission: 'skillapi.force'
+  args: '<player> <group> <class>'
+  sender: 'ANYONE'
+  enabled: 'true'
+  cooldown: 0
+clearbind: 
+  name: 'clearbind'
+  description: 'Clears skill binds'
+  permission: 'skillapi.basic'
+  args: ''
+  sender: 'PLAYER_ONLY'
+  enabled: 'true'
+  cooldown: 0
+  messages: 
+    skills-unbound: '&2All skill bindings have been cleared'
+customize: 
+  name: 'customize'
+  description: 'Opens GUI editor'
+  permission: 'skillapi.gui'
+  args: ''
+  sender: 'PLAYER_ONLY'
+  enabled: 'true'
+  cooldown: 0
+exp: 
+  name: 'exp'
+  description: 'Gives players exp'
+  permission: 'skillapi.level'
+  args: '[player] <amount> [group]'
+  sender: 'ANYONE'
+  enabled: 'true'
+  cooldown: 0
+  messages: 
+    received-exp: '&2You have received &6{exp} experience &2from &6{player}'
+info: 
+  name: 'info'
+  description: 'Shows class info'
+  permission: 'skillapi.basic'
+  args: '[player]'
+  sender: 'ANYONE'
+  enabled: 'true'
+  cooldown: 0
+  messages: 
+    title: '&8--&2 {player} &8-----------'
+    separator: '&8----------------------------'
+    category: '&6{group}&7: '
+    profession: '&bLv{level} &2{profession}'
+    exp: '&bExp &2{exp}'
+    end: '&8----------------------------'
+    not-player: '&cThat is not a valid player name'
+level: 
+  name: 'level'
+  description: 'Gives players levels'
+  permission: 'skillapi.level'
+  args: '[player] <amount> [group]'
+  sender: 'ANYONE'
+  enabled: 'true'
+  cooldown: 0
+  messages: 
+    received-level: '&2You have received &6{level} levels &2from &6{player}'
+list: 
+  name: 'list'
+  description: 'Displays accounts'
+  permission: 'skillapi.basic'
+  args: '[player]'
+  sender: 'ANYONE'
+  enabled: 'true'
+  cooldown: 0
+  messages: 
+    title: '&8--&2 {player} &8-----------'
+    line: '&7[&6{id}&7] &2Lv&6{level} {class}'
+    end: '&8----------------------------'
+lore: 
+  name: 'lore'
+  description: 'Adds lore to item'
+  permission: 'skillapi.lore'
+  args: '<lore>'
+  sender: 'PLAYER_ONLY'
+  enabled: 'true'
+  cooldown: 0
+mana: 
+  name: 'mana'
+  description: 'Gives player mana'
+  permission: 'skillapi.mana'
+  args: '[player] <amount>'
+  sender: 'ANYONE'
+  enabled: 'true'
+  cooldown: 0
+options: 
+  name: 'options'
+  description: 'Views profess options'
+  permission: 'proxis.admin.account'
+  args: ''
+  sender: 'PLAYER_ONLY'
+  enabled: 'true'
+  cooldown: 0
+  messages: 
+    title: '&8--&2 Profess Options &8-----------'
+    category: '&6{category}&7: '
+    option: '&d{option}&7'
+    separator: '&8----------------------------'
+    no-options: '&7None'
+    end: '&8----------------------------'
+points: 
+  name: 'points'
+  description: 'Gives player points'
+  permission: 'skillapi.points'
+  args: '[player] <amount>'
+  sender: 'ANYONE'
+  enabled: 'true'
+  cooldown: 0
+profess: 
+  name: 'profess'
+  description: 'Professes classes'
+  permission: 'proxis.admin.account'
+  args: '<class>'
+  sender: 'PLAYER_ONLY'
+  enabled: 'true'
+  cooldown: 0
+  messages: 
+    professed: '&2You are now a &6{class}'
+    not-available: "&cThere's no profession available at this time"
+    invalid-class: '&cThat is not a valid class'
+    cannot-profess: '&cYou cannot profess to this class currently'
+reload: 
+  name: 'reload'
+  description: 'Reloads the plugin'
+  permission: 'skillapi.reload'
+  args: ''
+  sender: 'ANYONE'
+  enabled: 'true'
+  cooldown: 0
+  messages: 
+    done: '&2The plugin has been reloaded'
+reset: 
+  name: 'reset'
+  description: 'Resets account data'
+  permission: 'proxis.admin.account'
+  args: ''
+  sender: 'PLAYER_ONLY'
+  enabled: 'true'
+  cooldown: 0
+  messages: 
+    reset: '&2You have reset your active account data'
+    confirm: "&4This will delete your active account's data entirely"
+    instructions: '&7Type &6/class reset confirm&7 to continue'
+skill: 
+  name: 'skill'
+  description: 'Shows player skills'
+  permission: 'skillapi.basic'
+  args: ''
+  sender: 'PLAYER_ONLY'
+  enabled: 'true'
+  cooldown: 0
+  messages: 
+    no-skills: '&cYou have no skills to view'
+unbind: 
+  name: 'unbind'
+  description: 'Unbinds held item'
+  permission: 'skillapi.basic'
+  args: ''
+  sender: 'PLAYER_ONLY'
+  enabled: 'true'
+  cooldown: 0
+  messages: 
+    skill-unbound: '&6{skill} &2has been unbound from &6{item}'
+world: 
+  name: 'world'
+  description: 'Moves to world'
+  permission: 'skillapi.world'
+  args: '<world>'
+  sender: 'PLAYER_ONLY'
+  enabled: 'true'
+  cooldown: 0
+forceaccount: 
+  name: 'forceaccount'
+  description: "Changes player's account"
+  permission: 'skillapi.force'
+  args: '<player> <accountId>'
+  sender: 'CONSOLE_ONLY'
+  enabled: 'true'
+  cooldown: 0
+forceattr: 
+  name: 'forceattr'
+  description: 'Refunds/gives attributes'
+  permission: 'skillapi.force'
+  args: '<player> [attr] [amount]'
+  sender: 'CONSOLE_ONLY'
+  enabled: 'true'
+  cooldown: 0
+forcecast: 
+  name: 'forcecast'
+  description: 'Player casts the skill'
+  permission: 'skillapi.force'
+  args: '<player> <skill> [level]'
+  sender: 'CONSOLE_ONLY'
+  enabled: 'true'
+  cooldown: 0
+  messages: 
+    invalid-skill: '&cThat is not a valid skill'
+forceprofess: 
+  name: 'forceprofess'
+  description: 'Professes a player'
+  permission: 'skillapi.force'
+  args: '<player> <class>'
+  sender: 'CONSOLE_ONLY'
+  enabled: 'true'
+  cooldown: 0
+  messages: 
+    cannot-profess: '&cThey cannot profess to this class currently'
+forcereset: 
+  name: 'forcereset'
+  description: 'Resets player data'
+  permission: 'skillapi.force'
+  args: '<player> [account]'
+  sender: 'CONSOLE_ONLY'
+  enabled: 'true'
+  cooldown: 0
+forceskill: 
+  name: 'forceskill'
+  description: 'Modifies skill levels'
+  permission: 'skillapi.force'
+  args: '<player> <up|down|reset> <skill>'
+  sender: 'CONSOLE_ONLY'
+  enabled: 'true'
+  cooldown: 0
+acc: 
+  name: 'acc'
+  description: 'Changes account'
+  permission: 'proxis.admin.account'
+  args: '<accountId>'
+  sender: 'PLAYER_ONLY'
+  enabled: 'true'
+  cooldown: 0
+  messages: 
+    not-account: '&cThat is not a valid account ID'
+    account-changed: '&2Your account has been changed'
+ap: 
+  name: 'ap'
+  description: 'Gives attrib points'
+  permission: 'skillapi.attrib'
+  args: '[player] <amount>'
+  sender: 'ANYONE'
+  enabled: 'true'
+  cooldown: 0
+  messages: 
+    received-points: '&2You have received &6{points} attribute points &2from &6{player}'
+attr: 
+  name: 'attr'
+  description: 'Opens attribute menu'
+  permission: 'skillapi.basic'
+  args: ''
+  sender: 'PLAYER_ONLY'
+  enabled: 'true'
+  cooldown: 0
+bar: 
+  name: 'bar'
+  description: 'Toggles skill bar'
+  permission: 'skillapi.basic'
+  args: ''
+  sender: 'CONSOLE_ONLY'
+  enabled: 'true'
+  cooldown: 0
+  messages: 
+    toggle-off: '&2Your skill bar has been &2disabled'
+    toggle-on: '&2Your skill bar has been &6enabled'

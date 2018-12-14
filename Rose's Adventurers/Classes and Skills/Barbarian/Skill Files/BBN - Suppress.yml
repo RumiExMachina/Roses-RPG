@@ -1,0 +1,163 @@
+BBN - Suppress: 
+  name: 'BBN - Suppress'
+  type: 'Barbarian - Debuff'
+  max-level: 1
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    level-base: '13'
+    level-scale: '0'
+    cost-base: '1'
+    cost-scale: '0'
+    cooldown-base: '18'
+    cooldown-scale: '0'
+    mana-base: '0'
+    mana-scale: '0'
+    points-spent-req-base: '0'
+    points-spent-req-scale: '0'
+    incompatible: 
+    - 'BBN - Shriek'
+  msg: '&6{player} &2has cast &6{skill}&r'
+  icon: 'IRON_HELMET'
+  icon-durability: 0
+  icon-data: 0
+  icon-lore: 
+  - '&3&l{name}'
+  - '&f- &bRank: &7({level}/{max})'
+  - '&f&m---------------&f[ &3Description &f]&f&m---------------'
+  - '&f- Channel for half second. Active-AOE, silence for 6s'
+  - '&fwith 4 radius.'
+  - '&f&m---------------&f[ &3Information &f]&f&m---------------'
+  - '&f- &3Level Required: &f13'
+  - '&f- &3Points Required: &f1'
+  - '&f&m---------------------------------------------'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      indicator: '3D'
+      data: 
+        icon-key: ''
+        indicator: '2D'
+      children: 
+        Self-b: 
+          type: 'target'
+          indicator: '3D'
+          data: 
+            icon-key: ''
+            indicator: '2D'
+            group: 'enemy'
+            wall: 'false'
+            caster: 'false'
+          children: 
+            Sound-c: 
+              type: 'mechanic'
+              indicator: '3D'
+              data: 
+                icon-key: ''
+                counts: 'True'
+                sound: 'Entity Generic Splash'
+                volume-base: '100'
+                volume-scale: '0'
+                pitch-base: '1'
+                pitch-scale: '0'
+                indicator: '2D'
+              children:  {}
+            Particle Effect-d: 
+              type: 'mechanic'
+              indicator: '3D'
+              data: 
+                icon-key: ''
+                counts: 'True'
+                effect-key: 'SUPPRESS_1'
+                duration-base: '1'
+                duration-scale: '0'
+                -shape: 'hexagon'
+                -shape-dir: 'XZ'
+                -shape-size: '1'
+                -animation: 'one-circle'
+                -anim-dir: 'XZ'
+                -anim-size: '1'
+                -interval: '1'
+                -view-range: '25'
+                -particle-type: 'CRIT_MAGIC'
+                -particle-amount: '0'
+                -particle-dx: '0'
+                -particle-dy: '0'
+                -particle-dz: '0'
+                -particle-speed: '1'
+                indicator: '2D'
+              children:  {}
+            Channel-e: 
+              type: 'mechanic'
+              indicator: '3D'
+              data: 
+                icon-key: ''
+                counts: 'True'
+                still: 'False'
+                time-base: '0.5'
+                time-scale: '0'
+                indicator: '2D'
+              children: 
+                Area-f: 
+                  type: 'target'
+                  indicator: '3D'
+                  data: 
+                    icon-key: ''
+                    radius-base: '4'
+                    radius-scale: '0'
+                    group: 'Enemy'
+                    wall: 'False'
+                    caster: 'False'
+                    max-base: '10'
+                    max-scale: '0'
+                    random: 'False'
+                    indicator: '2D'
+                  children: 
+                    Sound-g: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        sound: 'Block Anvil Fall'
+                        volume-base: '100'
+                        volume-scale: '0'
+                        pitch-base: '1'
+                        pitch-scale: '0'
+                        indicator: '2D'
+                      children:  {}
+                    Particle-h: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        particle: 'Enchantment Table'
+                        arrangement: 'Sphere'
+                        radius-base: '4'
+                        radius-scale: '0'
+                        particles-base: '20'
+                        particles-scale: '0'
+                        visible-radius: '25'
+                        dx: '0'
+                        dy: '0'
+                        dz: '0'
+                        speed: '1'
+                        amount: '1'
+                        forward: '0'
+                        upward: '0'
+                        right: '0'
+                        indicator: '2D'
+                      children:  {}
+                    Status-i: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        status: 'Silence'
+                        duration-base: '6'
+                        duration-scale: '0'
+                        indicator: '2D'
+                      children:  {}

@@ -1,0 +1,46 @@
+Clock - Core: 
+  name: 'Clock - Core'
+  action-bar: ''
+  prefix: '&cClock Core'
+  group: 'core'
+  mana: '&2Mana'
+  max-level: 100
+  parent: ''
+  needs-permission: 'false'
+  attributes: 
+    health-base: '0'
+    health-scale: '0'
+    mana-base: '0'
+    mana-scale: '0'
+    str-base: '0'
+    str-scale: '0'
+    dex-base: '0'
+    dex-scale: '0'
+    int-base: '0'
+    int-scale: '0'
+    vit-base: '0'
+    vit-scale: '0'
+    wis-base: '0'
+    wis-scale: '0'
+    cha-base: '0'
+    cha-scale: '0'
+  mana-regen: 0.0
+  tree: 'REQUIREMENT'
+  blacklist:  []
+  skills: 
+  - 'Core Combat Power'
+  - 'Core Combat Defense'
+  - 'Core Damage Mods'
+  - 'Core Health Restore'
+  - 'Core Consumables EXP'
+  icon: 'BOOK'
+  icon-durability: 0
+  icon-data: 0
+  icon-lore: 
+  - '&b&l&nClock Engine Core'
+  - '&f&m---------------&f[ &3Information &f]&f&m---------------'
+  - '&fThe core of a character. Controls'
+  - '&fall the players stats. Allows the player'
+  - '&fto unlock &c&nPerks&f using Skill Points.'
+  - '&f&m---------------------------------------------'
+  exp-source: 273

@@ -1,0 +1,51 @@
+Swordsage: 
+  name: 'Swordsage'
+  action-bar: ''
+  prefix: '&4Swordsage'
+  group: 'class'
+  mana: '&2Mana'
+  max-level: 20
+  parent: 'Citizen'
+  needs-permission: 'true'
+  attributes: 
+    health-base: '180'
+    health-scale: '0'
+    mana-base: '100'
+    mana-scale: '0'
+    str-base: '0'
+    str-scale: '0'
+    dex-base: '0'
+    dex-scale: '0'
+    int-base: '0'
+    int-scale: '0'
+    vit-base: '0'
+    vit-scale: '0'
+    wis-base: '0'
+    wis-scale: '0'
+    cha-base: '0'
+    cha-scale: '0'
+  mana-regen: 1.0
+  tree: 'REQUIREMENT'
+  blacklist: 
+  - 'LEGACY_SHIELD'
+  - 'LEGACY_BOW'
+  skills: 
+  - 'SWS - Dancing Blades'
+  - 'SWS - Accelerate'
+  - 'SWS - Sword of Returning'
+  - 'SWS - Cure'
+  - 'SWS - Arcane Attraction'
+  - 'SWS - Bladestorm'
+  - 'SWS - Magic Weapon'
+  - 'SWS - Javelin'
+  - 'SWS - Heal'
+  icon: 'IRON_SWORD'
+  icon-durability: 0
+  icon-data: 0
+  icon-lore: 
+  - '&b&l&nSwordsage'
+  - '&f&m---------------&f[ &3Information &f]&f&m---------------'
+  - '&fThe caster and sword wielder, powerful combination '
+  - '&fof strength and mind. '
+  - '&f&m---------------------------------------------'
+  exp-source: 273

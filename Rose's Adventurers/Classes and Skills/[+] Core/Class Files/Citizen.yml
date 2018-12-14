@@ -1,0 +1,41 @@
+Citizen: 
+  name: 'Citizen'
+  action-bar: ''
+  prefix: '&7Citizen'
+  group: 'class'
+  mana: '&2Mana'
+  max-level: 1
+  parent: ''
+  needs-permission: 'false'
+  attributes: 
+    health-base: '100'
+    health-scale: '0'
+    mana-base: '0'
+    mana-scale: '0'
+    str-base: '0'
+    str-scale: '0'
+    dex-base: '0'
+    dex-scale: '0'
+    int-base: '0'
+    int-scale: '0'
+    vit-base: '0'
+    vit-scale: '0'
+    wis-base: '0'
+    wis-scale: '0'
+    cha-base: '0'
+    cha-scale: '0'
+  mana-regen: 0.0
+  tree: 'REQUIREMENT'
+  blacklist:  []
+  skills:  []
+  icon: 'JACK_O_LANTERN'
+  icon-durability: 0
+  icon-data: 2
+  icon-lore: 
+  - '&b&l&nCitizen'
+  - '&f&m---------------&f[ &3Information &f]&f&m---------------'
+  - '&fThe starter class. Choose your'
+  - '&fpath, and become the greatest'
+  - '&flegend in The Realm.'
+  - '&f&m---------------------------------------------'
+  exp-source: 273

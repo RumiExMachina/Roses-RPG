@@ -1,0 +1,206 @@
+BUR - Shadowstep: 
+  name: 'BUR - Shadowstep'
+  type: 'Burglar - Utility'
+  max-level: 1
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    level-base: '7'
+    level-scale: '0'
+    cost-base: '1'
+    cost-scale: '0'
+    cooldown-base: '20'
+    cooldown-scale: '0'
+    mana-base: '0'
+    mana-scale: '0'
+    points-spent-req-base: '0'
+    points-spent-req-scale: '0'
+    incompatible: 
+    - 'BUR - Stealth'
+    - 'BUR - Naturewalk'
+  msg: '&6{player} &2has cast &6{skill}&r'
+  icon: 'LEATHER_HELMET'
+  icon-durability: 0
+  icon-data: 0
+  icon-lore: 
+  - '&3&l{name}'
+  - '&f- &bRank: &7({level}/{max})'
+  - '&f&m---------------&f[ &3Description &f]&f&m---------------'
+  - '&f-  Invis while in darkness for 120s or until you attack.'
+  - '&f&m---------------&f[ &3Information &f]&f&m---------------'
+  - '&f- &3Level Required: &f7'
+  - '&f- &3Points Required: &f1'
+  - '&f&m---------------------------------------------'
+  desc:  []
+  components: 
+    Skill Damage-g: 
+      type: 'trigger'
+      indicator: '3D'
+      data: 
+        icon-key: ''
+        mana: 'False'
+        cooldown: 'False'
+        target: 'True'
+        dmg-min: '0'
+        dmg-max: '9999'
+        category: 
+        - 'MELEE'
+        indicator: '2D'
+      children: 
+        Self-h: 
+          type: 'target'
+          indicator: '3D'
+          data: 
+            icon-key: ''
+            indicator: '2D'
+            group: 'enemy'
+            wall: 'false'
+            caster: 'false'
+          children: 
+            Flag-i: 
+              type: 'condition'
+              indicator: '3D'
+              data: 
+                icon-key: ''
+                type: 'Set'
+                key: 'DIS_BURGLAR_2'
+                indicator: '2D'
+              children: 
+                Command-j: 
+                  type: 'mechanic'
+                  indicator: '3D'
+                  data: 
+                    icon-key: ''
+                    counts: 'True'
+                    command: 'undis'
+                    type: 'OP'
+                    indicator: '2D'
+                  children:  {}
+                Flag Clear-k: 
+                  type: 'mechanic'
+                  indicator: '3D'
+                  data: 
+                    icon-key: ''
+                    counts: 'True'
+                    key: 'DIS_BURGLAR_2'
+                    indicator: '2D'
+                  children:  {}
+    Move-l: 
+      type: 'trigger'
+      indicator: '3D'
+      data: 
+        icon-key: ''
+        mana: 'False'
+        cooldown: 'False'
+        indicator: '2D'
+      children: 
+        Self-m: 
+          type: 'target'
+          indicator: '3D'
+          data: 
+            icon-key: ''
+            indicator: '2D'
+            group: 'enemy'
+            wall: 'false'
+            caster: 'false'
+          children: 
+            Flag-n: 
+              type: 'condition'
+              indicator: '3D'
+              data: 
+                icon-key: ''
+                type: 'Set'
+                key: 'DIS_BURGLAR_2'
+                indicator: '2D'
+              children: 
+                Light-o: 
+                  type: 'condition'
+                  indicator: '3D'
+                  data: 
+                    icon-key: ''
+                    min-light-base: '11'
+                    min-light-scale: '0'
+                    max-light-base: '20'
+                    max-light-scale: '0'
+                    indicator: '2D'
+                  children: 
+                    Command-p: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        command: 'undis'
+                        type: 'OP'
+                        indicator: '2D'
+                      children:  {}
+                    Flag Clear-q: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        key: 'DIS_BURGLAR_2'
+                        indicator: '2D'
+                      children:  {}
+    Cast: 
+      type: 'trigger'
+      indicator: '3D'
+      data: 
+        icon-key: ''
+        indicator: '2D'
+      children: 
+        Self-b: 
+          type: 'target'
+          indicator: '3D'
+          data: 
+            icon-key: ''
+            indicator: '2D'
+            group: 'enemy'
+            wall: 'false'
+            caster: 'false'
+          children: 
+            Flag-c: 
+              type: 'condition'
+              indicator: '3D'
+              data: 
+                icon-key: ''
+                type: 'Not Set'
+                key: 'DIS_BURGLAR_2'
+                indicator: '2D'
+              children: 
+                Light-d: 
+                  type: 'condition'
+                  indicator: '3D'
+                  data: 
+                    icon-key: ''
+                    min-light-base: '0'
+                    min-light-scale: '0'
+                    max-light-base: '10'
+                    max-light-scale: '0'
+                    indicator: '2D'
+                  children: 
+                    Disguise-e: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        duration-base: '120'
+                        duration-scale: '0'
+                        type: 'Misc'
+                        misc: 'Arrow'
+                        data: '0'
+                        indicator: '2D'
+                      children:  {}
+                    Flag-f: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        key: 'DIS_BURGLAR_2'
+                        seconds-base: '120'
+                        seconds-scale: '0'
+                        indicator: '2D'
+                      children:  {}

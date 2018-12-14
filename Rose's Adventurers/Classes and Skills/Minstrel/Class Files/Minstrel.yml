@@ -1,0 +1,47 @@
+Minstrel: 
+  name: 'Minstrel'
+  action-bar: ''
+  prefix: '&3Minstrel'
+  group: 'class'
+  mana: '&2Mana'
+  max-level: 20
+  parent: 'Citizen'
+  needs-permission: 'false'
+  attributes: 
+    health-base: '250'
+    health-scale: '0'
+    mana-base: '100'
+    mana-scale: '0'
+    str-base: '0'
+    str-scale: '0'
+    dex-base: '0'
+    dex-scale: '0'
+    int-base: '0'
+    int-scale: '0'
+    vit-base: '0'
+    vit-scale: '0'
+    wis-base: '0'
+    wis-scale: '0'
+    cha-base: '0'
+    cha-scale: '0'
+  mana-regen: 5.0
+  tree: 'REQUIREMENT'
+  blacklist: 
+  - 'LEGACY_SHIELD'
+  - 'LEGACY_BOW'
+  skills: 
+  - 'MIN - Cards of Fate'
+  - 'MIN - Song of Sickness'
+  - 'MIN - Song of Stillness'
+  - 'MIN - Song of Sorrow'
+  - 'MIN - Crescendo'
+  icon: 'JUKEBOX'
+  icon-durability: 0
+  icon-data: 0
+  icon-lore: 
+  - '&b&l&nMinstrel'
+  - '&f&m---------------&f[ &3Information &f]&f&m---------------'
+  - '&fThe traveling musician. Has powerful card based'
+  - '&fspells that can be used to combo and debuff enemies. '
+  - '&f&m---------------------------------------------'
+  exp-source: 273

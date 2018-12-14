@@ -1,0 +1,245 @@
+GLA - Demoralize: 
+  name: 'GLA - Demoralize'
+  type: 'Gladiator - Buff'
+  max-level: 1
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    level-base: '16'
+    level-scale: '0'
+    cost-base: '1'
+    cost-scale: '0'
+    cooldown-base: '45'
+    cooldown-scale: '0'
+    mana-base: '0'
+    mana-scale: '0'
+    points-spent-req-base: '0'
+    points-spent-req-scale: '0'
+    incompatible: 
+    - 'GLA - ShowOff'
+    - 'GLA - Victory Lap'
+    - 'GLA - Bait'
+  msg: '&6{player} &2has cast &6{skill}&r'
+  icon: 'CHEST'
+  icon-durability: 0
+  icon-data: 2
+  icon-lore: 
+  - '&3&l{name}'
+  - '&f- &bRank: &7({level}/{max})'
+  - '&f&m---------------&f[ &3Description &f]&f&m---------------'
+  - '&f- Instead of heal, buff yourself to take 50% less damage for 12s.'
+  - '&f&m---------------&f[ &3Information &f]&f&m---------------'
+  - '&f- &3Level Required: &f16'
+  - '&f- &3Points Required: &f1'
+  - '&f&m---------------------------------------------'
+  desc:  []
+  components: 
+    Took Skill Damage-n: 
+      type: 'trigger'
+      indicator: '3D'
+      data: 
+        icon-key: ''
+        mana: 'False'
+        cooldown: 'False'
+        target: 'True'
+        dmg-min: '0'
+        dmg-max: '9999'
+        category: 
+        - 'MELEE'
+        - 'RANGED'
+        indicator: '2D'
+      children: 
+        Self-o: 
+          type: 'target'
+          indicator: '3D'
+          data: 
+            icon-key: ''
+            indicator: '2D'
+            group: 'enemy'
+            wall: 'false'
+            caster: 'false'
+          children: 
+            Flag-p: 
+              type: 'condition'
+              indicator: '3D'
+              data: 
+                icon-key: ''
+                type: 'Set'
+                key: 'DEMO_POWER'
+                indicator: '2D'
+              children: 
+                Buff-q: 
+                  type: 'mechanic'
+                  indicator: '3D'
+                  data: 
+                    icon-key: ''
+                    counts: 'True'
+                    immediate: 'True'
+                    modifier: 'Multiplier'
+                    value-base: '0.5'
+                    value-scale: '0'
+                    indicator: '2D'
+                  children:  {}
+    Cast: 
+      type: 'trigger'
+      indicator: '3D'
+      data: 
+        icon-key: ''
+        indicator: '2D'
+      children: 
+        Self-b: 
+          type: 'target'
+          indicator: '3D'
+          data: 
+            icon-key: ''
+            indicator: '2D'
+            group: 'enemy'
+            wall: 'false'
+            caster: 'false'
+          children: 
+            Particle Effect-c: 
+              type: 'mechanic'
+              indicator: '3D'
+              data: 
+                icon-key: ''
+                counts: 'True'
+                effect-key: 'DEMORALIZE_GLADIATOR'
+                duration-base: '2'
+                duration-scale: '0'
+                -shape: 'hexagon'
+                -shape-dir: 'XZ'
+                -shape-size: '1'
+                -animation: 'three-spiral'
+                -anim-dir: 'XZ'
+                -anim-size: '1'
+                -interval: '1'
+                -view-range: '25'
+                -particle-type: 'SLIME'
+                -particle-amount: '0'
+                -particle-dx: '0'
+                -particle-dy: '0'
+                -particle-dz: '0'
+                -particle-speed: '1'
+                indicator: '2D'
+              children:  {}
+            Sound-d: 
+              type: 'mechanic'
+              indicator: '3D'
+              data: 
+                icon-key: ''
+                counts: 'True'
+                sound: 'Entity Firework Rocket Blast'
+                volume-base: '100'
+                volume-scale: '0'
+                pitch-base: '2'
+                pitch-scale: '0'
+                indicator: '2D'
+              children:  {}
+            Channel-e: 
+              type: 'mechanic'
+              indicator: '3D'
+              data: 
+                icon-key: ''
+                counts: 'True'
+                still: 'True'
+                time-base: '2'
+                time-scale: '0'
+                indicator: '2D'
+              children: 
+                Area-f: 
+                  type: 'target'
+                  indicator: '3D'
+                  data: 
+                    icon-key: ''
+                    radius-base: '5'
+                    radius-scale: '0'
+                    group: 'Enemy'
+                    wall: 'False'
+                    caster: 'False'
+                    max-base: '99'
+                    max-scale: '0'
+                    random: 'False'
+                    indicator: '2D'
+                  children: 
+                    Entity Type-g: 
+                      type: 'condition'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        types: 
+                        - 'Player'
+                        indicator: '2D'
+                      children: 
+                        Self-h: 
+                          type: 'target'
+                          indicator: '3D'
+                          data: 
+                            icon-key: ''
+                            indicator: '2D'
+                            group: 'enemy'
+                            wall: 'false'
+                            caster: 'false'
+                          children: 
+                            Message-i: 
+                              type: 'mechanic'
+                              indicator: '3D'
+                              data: 
+                                icon-key: ''
+                                counts: 'False'
+                                message: '&f[&cDemoralize&f] &4FAIL!'
+                                indicator: '2D'
+                              children:  {}
+                    Else-j: 
+                      type: 'condition'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        indicator: '2D'
+                      children: 
+                        Particle-k: 
+                          type: 'mechanic'
+                          indicator: '3D'
+                          data: 
+                            icon-key: ''
+                            counts: 'True'
+                            particle: 'Slime'
+                            arrangement: 'Sphere'
+                            radius-base: '2'
+                            radius-scale: '0'
+                            particles-base: '40'
+                            particles-scale: '0'
+                            visible-radius: '25'
+                            dx: '0'
+                            dy: '0'
+                            dz: '0'
+                            speed: '1'
+                            amount: '1'
+                            forward: '0'
+                            upward: '0'
+                            right: '0'
+                            indicator: '2D'
+                          children:  {}
+                        Sound-l: 
+                          type: 'mechanic'
+                          indicator: '3D'
+                          data: 
+                            icon-key: ''
+                            counts: 'True'
+                            sound: 'Entity Blaze Ambient'
+                            volume-base: '100'
+                            volume-scale: '0'
+                            pitch-base: '1'
+                            pitch-scale: '0'
+                            indicator: '2D'
+                          children:  {}
+                        Flag-m: 
+                          type: 'mechanic'
+                          indicator: '3D'
+                          data: 
+                            icon-key: ''
+                            counts: 'True'
+                            key: 'DEMO_POWER'
+                            seconds-base: '12'
+                            seconds-scale: '0'
+                            indicator: '2D'
+                          children:  {}

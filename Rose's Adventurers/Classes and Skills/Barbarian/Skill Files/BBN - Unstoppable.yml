@@ -1,0 +1,279 @@
+BBN - Unstoppable: 
+  name: 'BBN - Unstoppable'
+  type: 'Barbarian - Mobility'
+  max-level: 1
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    level-base: '1'
+    level-scale: '0'
+    cost-base: '1'
+    cost-scale: '0'
+    cooldown-base: '20'
+    cooldown-scale: '0'
+    mana-base: '0'
+    mana-scale: '0'
+    points-spent-req-base: '0'
+    points-spent-req-scale: '0'
+    incompatible: 
+    - 'BBN - Unhexable'
+    - 'BBN - Untouchable'
+  msg: '&6{player} &2has cast &6{skill}&r'
+  icon: 'IRON_BOOTS'
+  icon-durability: 0
+  icon-data: 0
+  icon-lore: 
+  - '&3&l{name}'
+  - '&f- &bRank: &7({level}/{max})'
+  - '&f&m---------------&f[ &3Description &f]&f&m---------------'
+  - '&f- Active, Remove all debuffs on self. If targeting '
+  - '&fan enemy, then dash towards them.'
+  - '&f&m---------------&f[ &3Information &f]&f&m---------------'
+  - '&f- &3Level Required: &f1'
+  - '&f- &3Points Required: &f1'
+  - '&f&m---------------------------------------------'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      indicator: '3D'
+      data: 
+        icon-key: ''
+        indicator: '2D'
+      children: 
+        Self-b: 
+          type: 'target'
+          indicator: '3D'
+          data: 
+            icon-key: ''
+            indicator: '2D'
+            group: 'enemy'
+            wall: 'false'
+            caster: 'false'
+          children: 
+            Launch-c: 
+              type: 'mechanic'
+              indicator: '3D'
+              data: 
+                icon-key: ''
+                counts: 'True'
+                relative: 'Target'
+                forward-base: '7'
+                forward-scale: '0'
+                upward-base: '0.25'
+                upward-scale: '0'
+                right-base: '0'
+                right-scale: '0'
+                indicator: '2D'
+              children:  {}
+            Flag-d: 
+              type: 'mechanic'
+              indicator: '3D'
+              data: 
+                icon-key: ''
+                counts: 'True'
+                key: 'UNSTOPPABLE'
+                seconds-base: '4'
+                seconds-scale: '0'
+                indicator: '2D'
+              children:  {}
+            Flag-e: 
+              type: 'mechanic'
+              indicator: '3D'
+              data: 
+                icon-key: ''
+                counts: 'True'
+                key: 'CD_UNSTOPPABLE'
+                seconds-base: '20'
+                seconds-scale: '0'
+                indicator: '2D'
+              children:  {}
+    Initialize: 
+      type: 'trigger'
+      indicator: '3D'
+      data: 
+        icon-key: ''
+        indicator: '2D'
+      children: 
+        Passive-g: 
+          type: 'mechanic'
+          indicator: '3D'
+          data: 
+            icon-key: ''
+            counts: 'True'
+            seconds-base: '1'
+            seconds-scale: '0'
+            indicator: '2D'
+          children: 
+            Status-h: 
+              type: 'condition'
+              indicator: '3D'
+              data: 
+                icon-key: ''
+                type: 'Active'
+                status: 'Silence'
+                indicator: '2D'
+              children: 
+                Flag-i: 
+                  type: 'condition'
+                  indicator: '3D'
+                  data: 
+                    icon-key: ''
+                    type: 'Not Set'
+                    key: 'CD_UNSTOPPABLE'
+                    indicator: '2D'
+                  children: 
+                    Flag-j: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        key: 'UNSTOPPABLE'
+                        seconds-base: '4'
+                        seconds-scale: '0'
+                        indicator: '2D'
+                      children:  {}
+                    Cooldown-k: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        skill: 'BBN - Unstoppable'
+                        type: 'Seconds'
+                        value-base: '20'
+                        value-scale: '0'
+                        indicator: '2D'
+                      children:  {}
+                    Flag-l: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        key: 'CD_UNSTOPPABLE'
+                        seconds-base: '20'
+                        seconds-scale: '0'
+                        indicator: '2D'
+                      children:  {}
+            Status-m: 
+              type: 'condition'
+              indicator: '3D'
+              data: 
+                icon-key: ''
+                type: 'Active'
+                status: 'Stun'
+                indicator: '2D'
+              children: 
+                Flag-n: 
+                  type: 'condition'
+                  indicator: '3D'
+                  data: 
+                    icon-key: ''
+                    type: 'Not Set'
+                    key: 'CD_UNSTOPPABLE'
+                    indicator: '2D'
+                  children: 
+                    Flag-o: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        key: 'UNSTOPPABLE'
+                        seconds-base: '4'
+                        seconds-scale: '0'
+                        indicator: '2D'
+                      children:  {}
+                    Cooldown-p: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        skill: 'BBN - Unstoppable'
+                        type: 'Seconds'
+                        value-base: '20'
+                        value-scale: '0'
+                        indicator: '2D'
+                      children:  {}
+                    Flag-q: 
+                      type: 'mechanic'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        key: 'CD_UNSTOPPABLE'
+                        seconds-base: '20'
+                        seconds-scale: '0'
+                        indicator: '2D'
+                      children:  {}
+        Passive-r: 
+          type: 'mechanic'
+          indicator: '3D'
+          data: 
+            icon-key: ''
+            counts: 'True'
+            seconds-base: '1'
+            seconds-scale: '0'
+            indicator: '2D'
+          children: 
+            Flag-s: 
+              type: 'condition'
+              indicator: '3D'
+              data: 
+                icon-key: ''
+                type: 'Set'
+                key: 'UNSTOPPABLE'
+                indicator: '2D'
+              children: 
+                Cleanse-t: 
+                  type: 'mechanic'
+                  indicator: '3D'
+                  data: 
+                    icon-key: ''
+                    counts: 'True'
+                    potion: 'All'
+                    status: 'All'
+                    indicator: '2D'
+                  children:  {}
+                Buff-u: 
+                  type: 'mechanic'
+                  indicator: '3D'
+                  data: 
+                    icon-key: ''
+                    counts: 'True'
+                    immediate: 'False'
+                    type: 'SKILL_DEFENSE'
+                    modifier: 'Multiplier'
+                    category: 'MAGIC'
+                    value-base: '0'
+                    value-scale: '0'
+                    seconds-base: '1'
+                    seconds-scale: '0'
+                    indicator: '2D'
+                  children:  {}
+                Particle-v: 
+                  type: 'mechanic'
+                  indicator: '3D'
+                  data: 
+                    icon-key: ''
+                    counts: 'True'
+                    particle: 'Angry Villager'
+                    arrangement: 'Sphere'
+                    radius-base: '2'
+                    radius-scale: '0'
+                    particles-base: '20'
+                    particles-scale: '0'
+                    visible-radius: '25'
+                    dx: '0'
+                    dy: '0'
+                    dz: '0'
+                    speed: '1'
+                    amount: '1'
+                    forward: '0'
+                    upward: '0'
+                    right: '0'
+                    indicator: '2D'
+                  children:  {}

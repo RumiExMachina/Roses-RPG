@@ -1,0 +1,48 @@
+Burglar: 
+  name: 'Burglar'
+  action-bar: ''
+  prefix: '&aBurglar'
+  group: 'class'
+  mana: '&2Mana'
+  max-level: 20
+  parent: 'Citizen'
+  needs-permission: 'true'
+  attributes: 
+    health-base: '230'
+    health-scale: '0'
+    mana-base: '0'
+    mana-scale: '0'
+    str-base: '0'
+    str-scale: '0'
+    dex-base: '0'
+    dex-scale: '0'
+    int-base: '0'
+    int-scale: '0'
+    vit-base: '0'
+    vit-scale: '0'
+    wis-base: '0'
+    wis-scale: '0'
+    cha-base: '0'
+    cha-scale: '0'
+  mana-regen: 0.0
+  tree: 'REQUIREMENT'
+  blacklist:  []
+  skills: 
+  - 'BUR - Pickpocket'
+  - 'BUR - Stealth'
+  - 'BUR - Backstab'
+  - 'BUR - Fight Dirty'
+  - 'BUR - Snipe'
+  - 'BUR - Shadowstep'
+  - 'BUR - Naturewalk'
+  icon: 'JACK_O_LANTERN'
+  icon-durability: 0
+  icon-data: 2
+  icon-lore: 
+  - '&b&l&nBurglar'
+  - '&f&m---------------&f[ &3Information &f]&f&m---------------'
+  - '&fThe sneaky striker, powerful melee'
+  - '&fstealth class. Can become invisible for'
+  - '&fshort amounts of time.'
+  - '&f&m---------------------------------------------'
+  exp-source: 273
