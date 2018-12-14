@@ -4,6 +4,7 @@ Proxis Official configuration packs. (SkillAPI) - RosesCore and SkillMMO.
 Documentation Roses Core:
 
   Basic lores:
+  
     General
       - Equipment Type: [Weapon / Armor / Tool]
       
@@ -23,17 +24,18 @@ Documentation Roses Core:
       - Level Requirement: [Any Positive INT]
 
   Classes Included:
-  - Clock - Core (Main Config Manager, DO NOT edit unless you know what you are doing.)
-    
-    Citizen (Basic Class)
-      - Archer
-      - Barbarian
-      - Burglar
-      - Dragoon
-      - Gladiator
-      - Minstrel
-      - Strider
-      - Swordsage
+  
+    - Clock - Core (Main Config Manager, DO NOT edit unless you know what you are doing.)
+      - Citizen (Basic Class)
+        - Archer
+        - Barbarian
+        - Burglar
+        - Dragoon
+        - Gladiator
+        - Minstrel
+        - Strider
+        - Swordsage
 
   Consumables Included:
+  
     - EXP Potion (Gives 5 Class EXP)(Disables normal EXP Bottles)
